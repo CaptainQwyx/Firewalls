@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    // config params
     [SerializeField] float screenWidthInUnits = 16f;
     [SerializeField] float minPaddlePosInUnits = 1f;
     [SerializeField] float maxPaddlePosInUnits = 15f;
