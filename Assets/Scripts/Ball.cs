@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     // config params
-    [SerializeField] Paddle paddle;
+    [SerializeField] Paddle paddle = null;
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
 
