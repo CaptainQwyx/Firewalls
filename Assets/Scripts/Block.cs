@@ -8,7 +8,7 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound = null;
 
     // Cached references
-    Level level;
+    Level level = null;
 
     private void Start()
     {
