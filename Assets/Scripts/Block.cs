@@ -6,6 +6,7 @@ public class Block : MonoBehaviour
 {
     // config params
     [SerializeField] AudioClip breakSound = null;
+    [SerializeField] GameObject blockSparklesVFX = null;
 
     // Cached references
     Level level = null;
@@ -29,5 +30,12 @@ public class Block : MonoBehaviour
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.BlockBroken();
+        TriggerSparklesVFX();
+    }
+
+    private void TriggerSparklesVFX()
+    {
+        GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 1f);
     }
 }
