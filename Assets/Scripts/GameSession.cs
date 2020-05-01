@@ -8,7 +8,7 @@ public class GameSession : MonoBehaviour
     // Config parameters
     [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsPerBlockDestroyed = 29;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText = null;
 
     // state
     [SerializeField] int currentScore = 0;   // Serialized for debug purposes
