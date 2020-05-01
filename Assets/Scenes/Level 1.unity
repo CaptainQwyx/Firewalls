@@ -6118,6 +6118,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5140267928521558688, guid: c84be16863af3214495a59d394535ada,
+        type: 3}
+      propertyPath: m_text
+      value: 0123456789
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140267928521558688, guid: c84be16863af3214495a59d394535ada,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5504934396158011800, guid: c84be16863af3214495a59d394535ada,
         type: 3}
       propertyPath: m_Name
