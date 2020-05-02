@@ -8,8 +8,7 @@ public class Block : MonoBehaviour
     // config params
     [SerializeField] AudioClip breakSound = null;
     [SerializeField] GameObject blockSparklesVFX = null;
-    [SerializeField] int maxHits = 0;
-    [SerializeField] Sprite[] healthSprites = null;
+    [SerializeField] Sprite[] damageSprites = null;
 
     // Cached references
     Level level = null;
@@ -40,29 +39,29 @@ public class Block : MonoBehaviour
     private void HandleHit()
     {
         currentHits++;
-        if (currentHits >= maxHits)
+
+        // Determine if we have another damage level to show
+        int spriteIndex = currentHits - 1;
+        if ( (damageSprites != null) && (spriteIndex < damageSprites.Length) )
         {
-            DestroyBlock();
+            GetComponent<SpriteRenderer>().sprite = damageSprites[spriteIndex];
         }
         else
         {
-            ShowNextHitSprite();
+            DestroyBlock();
         }
-    }
-
-    private void ShowNextHitSprite()
-    {
-        int spriteIndex = Math.Min(currentHits, healthSprites.Length);
-        GetComponent<SpriteRenderer>().sprite = healthSprites[spriteIndex];
     }
 
     private void DestroyBlock()
     {
+        // modify state
         gameSession.AddToScore();
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
-        Destroy(gameObject);
         level.BlockBroken();
+
+        // update view
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         TriggerSparklesVFX();
+        Destroy(gameObject);
     }
 
     private void TriggerSparklesVFX()

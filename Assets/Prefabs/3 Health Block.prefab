@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4272097906998527229}
   - component: {fileID: 4272097906998527230}
   m_Layer: 0
-  m_Name: 3 Health Block 1
+  m_Name: 3 Health Block
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,9 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 66803f534b912474d81b195fa9a0917d, type: 3}
   blockSparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
-  maxHits: 3
-  healthSprites:
-  - {fileID: 21300000, guid: be1adda5e1699564e8aab0c70f1359a5, type: 3}
+  damageSprites:
   - {fileID: 21300000, guid: d18943a49fb9eba4ea32c92f0733c34d, type: 3}
   - {fileID: 21300000, guid: e43aa3eadf2fc554586aaca5fc69b8ff, type: 3}
   currentHits: 0
