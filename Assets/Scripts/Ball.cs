@@ -49,7 +49,9 @@ public class Ball : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            myRigidBody2D.velocity = new Vector2(xPush, yPush);
+            myRigidBody2D.velocity = new Vector2(
+                Random.Range(-xPush, xPush),
+                yPush);
             ballLaunched = true;
         }
     }
@@ -63,8 +65,8 @@ public class Ball : MonoBehaviour
 
             // keep the ball from stagnating
             Vector2 velocityTweak = new Vector2(
-                Random.Range(0, randomBounceFactor), 
-                Random.Range(0, randomBounceFactor)
+                Random.Range(-randomBounceFactor, randomBounceFactor), 
+                Random.Range(-randomBounceFactor, randomBounceFactor)
                 );
             myRigidBody2D.velocity += velocityTweak;
         }
