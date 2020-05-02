@@ -13,6 +13,7 @@ public class Block : MonoBehaviour
     // Cached references
     Level level = null;
     GameSession gameSession = null;
+    SpriteRenderer mySpriteRenderer = null;
 
     // state
     [SerializeField] int currentHits = 0;   // only Serialized to view in inspector
@@ -21,6 +22,7 @@ public class Block : MonoBehaviour
     {
         gameSession = FindObjectOfType<GameSession>();
         level = FindObjectOfType<Level>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
 
         if (tag == "Breakable")
         {
@@ -44,7 +46,7 @@ public class Block : MonoBehaviour
         int spriteIndex = currentHits - 1;
         if ( (damageSprites != null) && (spriteIndex < damageSprites.Length) )
         {
-            GetComponent<SpriteRenderer>().sprite = damageSprites[spriteIndex];
+            mySpriteRenderer.sprite = damageSprites[spriteIndex];
         }
         else
         {

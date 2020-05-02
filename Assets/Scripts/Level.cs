@@ -7,7 +7,7 @@ public class Level : MonoBehaviour
     [SerializeField] int breakableBlocks = 0;  // Serialized for debugging purposes
 
     // Cached references
-    SceneLoader sceneLoader;
+    SceneLoader sceneLoader = null;
 
     private void Start()
     {
