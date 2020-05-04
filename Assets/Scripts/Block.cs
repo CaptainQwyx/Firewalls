@@ -12,7 +12,7 @@ public class Block : MonoBehaviour
 
     // Cached references
     Level level = null;
-    GameSession gameSession = null;
+    GameSession theGameSession = null;
     SpriteRenderer mySpriteRenderer = null;
 
     // state
@@ -20,7 +20,7 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
-        gameSession = FindObjectOfType<GameSession>();
+        theGameSession = FindObjectOfType<GameSession>();
         level = FindObjectOfType<Level>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -57,7 +57,7 @@ public class Block : MonoBehaviour
     private void DestroyBlock()
     {
         // modify state
-        gameSession.AddToScore();
+        theGameSession.AddToScore();
         level.BlockBroken();
 
         // update view

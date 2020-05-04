@@ -7,12 +7,14 @@ public class GameSession : MonoBehaviour
 {
     // Config parameters
     [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
-    [SerializeField] int pointsPerBlockDestroyed = 29;
+    [SerializeField] int pointsPerBlockDestroyed = 100;
     [SerializeField] TextMeshProUGUI scoreText = null;
+    [SerializeField] TextMeshProUGUI speedText = null;
 
     // state
     [SerializeField] int currentScore = 0;   // Serialized for debug purposes
     [SerializeField] bool isAutoPlayEnabled = false;
+    float scoreFactor = 1f;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         scoreText.text = currentScore.ToString();
+        speedText.text = scoreFactor.ToString("P");
     }
 
     // Update is called once per frame
@@ -41,8 +44,14 @@ public class GameSession : MonoBehaviour
 
     public void AddToScore()
     {
-        currentScore += pointsPerBlockDestroyed;
+        currentScore += Mathf.FloorToInt(pointsPerBlockDestroyed * scoreFactor);
         scoreText.text = currentScore.ToString();
+    }
+
+    public void AdjustScoreFactor(float factor)
+    {
+        scoreFactor = factor;
+        speedText.text = scoreFactor.ToString("P");
     }
 
     public void ResetGame()

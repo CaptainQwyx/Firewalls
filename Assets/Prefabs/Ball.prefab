@@ -101,7 +101,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9ddcd035b6533ae4eb6098f8a05c12d6, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a79ae7d6552b843ab6791d6e5807ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddle: {fileID: 0}
+  paddle: {fileID: 4304980409766318005, guid: 3521d99199fc9324cbc557ab5194c16a, type: 3}
   xPush: 2
   yPush: 15
   ballSounds:
@@ -142,6 +142,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 97c9a0c22b3f17f4991ace06cdbc26e3, type: 3}
   - {fileID: 8300000, guid: 643cede2639acc646920aea4e99cc807, type: 3}
   - {fileID: 8300000, guid: da6313a922443444aae359ae4583ba40, type: 3}
+  randomBounceFactor: 0.2
+  speedDelta: 0
+  minSpeedDelta: -5
+  maxSpeedDelta: 5
+  speedFactorIncrement: 0.1
 --- !u!82 &5635610
 AudioSource:
   m_ObjectHideFlags: 0
